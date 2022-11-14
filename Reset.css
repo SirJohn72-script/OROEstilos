@@ -127,3 +127,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.row{
+  --bs-gutter-x: 0 !important;
+}
