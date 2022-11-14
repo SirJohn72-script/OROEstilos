@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --grey: #8c8c8c;
+  --lightgrey: #d9d9d9;
+  --darkgrey: #393939;
+
+  --blue: #2979d4;
+  --blue_hover: #4d9af2;
+  --darkblue: #113e71;
+  --yellow: #f4d849;
+  --orange: #d49029;
+  --orange_hover: #deb16e;
+  --red: #d73535;
+  --lightblue: #f2f7ff;
+  --green: #15e229;
+
+  --hero: 'Akshar', sans-serif;
+  --body: 'Intern', sans-serif;
+  --header: 'Oswald', sans-serif;
+
+  --generalSize: 18px;
+  --subHeaderSize: 24px;
+  --headerSize: 32px;
+  --navbarLinks: 16px;
+  --heroSize: 48px;
+  --smallSize: 12px;
+}

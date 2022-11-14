@@ -1,0 +1,284 @@
+/* Layoput de los boletos */
+.boletos_collection
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+    margin-top: 48px;
+}
+
+.boletos_collection > .row
+{
+  width: 33.33%; 
+  display: flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.boleto_item
+{
+  width: 100%; 
+  /* border: 1px solid blue;  */
+}
+
+.registrar_boletos_container {
+  padding: 3rem 0;
+  margin-top: 70px;
+  min-height: 70px;
+}
+
+.registrar_boletos_datos_cfdi {
+  margin-top: 3rem;
+}
+
+.registrar_boletos_datos_boleto {
+  margin-top: 1rem;
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
+
+.registrar_boletos_datos_boleto_form_item {
+  margin-top: 1rem;
+}
+
+.registrar_boletos_datos_boleto_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.datos_cliente_form_input_md {
+  max-width: 400px;
+  width: 100%;
+}
+
+.registrar_boletos_datos_boleto_form_item_header {
+  display: flex;
+  justify-content: left;
+  padding-top: 0.5rem;
+
+  height: fit-content;
+  align-items: center;
+
+  width: 100%; 
+}
+
+.registrar_boletos_datos_boleto_index{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.ticket_index{
+  margin-left: 1rem;
+}
+
+.registrar_boletos_datos_boleto_form_item_indicator {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: var(--red);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 1rem;
+}
+
+/* Index - Titulo boleto  */
+.registrar_boletos_datos_boleto_index_label
+{
+  display: flex;
+}
+
+.registrar_boletos_datos_boleto_index_label p
+{
+  margin-left: 0.5rem;
+}
+
+/* Padding para los componentes */
+.folio_input, 
+.fecha_input, 
+.cv_input {
+  text-align: left !important;
+}
+
+/* Input de Fecha */
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute, 
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container,
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group{
+  width: 100%;
+}
+
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group
+{
+  position: relative;
+}
+
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group input[type='text']
+{
+  width: 100%; 
+  display: flex;
+}
+
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group .input-group-btn
+{
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: calc(100% - 30px) !important;
+  transform: translate(-50%, -50%) !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+  -moz-transform: translate(-50%, -50%) !important;
+  -ms-transform: translate(-50%, -50%) !important;
+  -o-transform: translate(-50%, -50%) !important;
+  z-index: 999999;
+}
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group .input-group-btn .btn-default
+{
+  padding: 0; 
+}
+
+.registrar_boletos_datos_boleto_form_item_input .gx-attribute .dp_container .input-group .input-group-btn .btn-default img{
+  vertical-align: baseline !important;
+}
+
+/* Erroes de fecha */
+.registrar_boletos_datos_boleto_form_item_input .ErrorMessages{
+  display: none !important;
+}
+
+
+/* Datos del boleto Estatico */
+.registrar_boletos_datos_boleto_form_item .form-control-static
+{
+  width: 100%; 
+}
+
+
+/* Acciones boleto */
+.registrar_boletos_datos_boleto_form_actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: left;
+}
+
+.registrar_boletos_datos_boleto_form_actions button {
+  margin-left: 0.5rem;
+}
+
+.registrar_boletos_datos_boleto_form_actions button i {
+  margin-right: 0.5rem;
+}
+
+.registrar_boletos_datos_agregar_boleto {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagen boleto */
+.registrar_boletos_datos_boleto_image {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.registrar_boletos_datos_boleto_image img {
+  width: 100%;
+}
+
+/* Confirmar */
+.registrar_boletos_confirmar {
+  margin-top: 6rem;
+}
+
+.registrar_boletos_confirmar_advice {
+  text-align: center;
+  background-color: var(--darkblue);
+  margin: 0.5rem 0;
+}
+
+.registrar_boletos_confirmar_advice p {
+  margin-bottom: 0;
+  padding: 0;
+  padding: 1rem 0;
+  color: var(--white);
+  font-family: var(--body);
+  font-size: var(--regularSize);
+  font-weight: 600;
+}
+
+.registrar_boletos_confirmar_advice span {
+  display: block;
+  margin-bottom: 0;
+  padding: 0;
+  padding: 1rem 0;
+  color: var(--white);
+  font-family: var(--body);
+  font-size: var(--regularSize);
+  font-weight: 600;
+}
+
+.registrar_boletos_confirmar_actions {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.registrar_boletos_confirmar_actions button {
+  margin: 0.5rem;
+}
+.registrar_boletos_confirmar_actions input[type='button'] {
+  margin: 0.5rem;
+}
+
+/* Confirmacion boleto */
+.registrar_boletos_confirmacion_message
+{
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.registrar_boletos_confirmacion_message span{
+  margin-left: 8px !important;
+}
+
+/* Cargar un nuevo boton */
+.agregar_boleto_container
+{
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+@media (max-width: 980px){
+  .boletos_collection>.row {
+      width: 50%;
+      display: flex !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+}
+
+@media (max-width: 570px) {
+
+  .boletos_collection>.row {
+      width: 100%;
+      display: flex !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+  .registrar_boletos_datos_boleto {
+    margin-top: 3rem;
+  }
+
+  .registrar_boletos_datos_boleto_image {
+    margin-top: 2rem;
+  }
+}

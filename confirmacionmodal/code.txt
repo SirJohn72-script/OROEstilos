@@ -1,0 +1,156 @@
+
+
+Event Start
+	&index = 1
+	no_boletos.Visible = False
+	confirmacion_operacion_banner.Visible = false
+	
+	/* Conversion de los parametros enviados como XML */
+	&ClientData.FromJson(&ClientDataLongChar)
+	&ClientEmail.FromJson(&ClientEmailLongChar)
+
+	/* Datos del Cliente */	
+	BarraProgresoComponent.Object = Create(BarraProcesoWC, 3)
+	&RFC = &ClientData.ClienteRFC
+	&Nombre = &ClientData.ClienteNombre
+	&Calle = &ClientData.ClienteCalle
+	&CP = &ClientData.ClienteCP
+Endevent
+
+Event 'CancelFacturacion'
+	HomeWP()
+Endevent
+
+Event 'ConfirmarOperacion'
+	//Validar operaciones datos cfdi
+	if &UsoCFDI.IsEmpty()
+		ErrorModal1.ShowModalError('Elegir una opción dentro del uso de CFDI')
+	else
+		if &TipoPago.IsEmpty()
+			ErrorModal1.ShowModalError('Elegir una opción dentro del pago')
+		else
+			// Validacion del los datos de los boletos 
+			if &BoletosValidados > 0
+				FacturaGenerada()
+			else
+				ErrorModal1.ShowModalError('Se debe de cargar al menos un boleto')
+			endif
+		endif
+	endif
+
+Endevent
+
+
+Event 'ConfirmarNoBoletos'
+	//Boletos 
+	&BoletosAuxInterfaz.Clear()
+	For &index = 0 to (&CantidadBoletos - 1)
+		&Boleto = new()
+		&Boleto.index = ( &index + 1)
+		&Boleto.fecha = &Today
+		&Boleto.valido = false
+		&BoletosCollection.Add(&Boleto)
+	endfor 
+	&CantidadBoletos.Enabled = false
+	ConfirmarNoBoletosBtn.Enabled = false
+Endevent
+
+Event 'ConfirmarBoleto'
+	&Boleto = new()
+	&Boleto = &BoletosCollection.CurrentItem
+	&BoletoFolioValido = false
+	&BoletoFechaValido = false
+	&BoletoCVValido = false
+	
+	IF &Boleto.folio.IsEmpty()
+		//ErrorFolio.Visible = True
+		//&Boleto.errorFolio = 'datos_cliente_form_input_error'
+		&Boleto.errorFolio = 'El campo de folio no puede estar vacio'
+		&BoletoFolioValido = false
+	ELSE
+		&Boleto.errorFolio = '/'
+		//ErrorFolio.Caption = '/'
+		//ErrorFolio.Class = 'datos_cliente_form_input_error--hidden'
+		&BoletoFolioValido = true
+	ENDIF
+
+	IF &Boleto.fecha.IsEmpty()
+		&Boleto.errorFecha = 'El campo no puede estar vacio'
+		//ErrorFecha.Visible = True
+		//ErrorFecha.Class = 'datos_cliente_form_input_error'
+		//ErrorFecha.Caption = 'El campo de fecha no puede ir vacio'
+		&BoletoFechaValido = false
+	ELSE
+		&Boleto.errorFecha = '/'
+		//ErrorFecha.Caption = '/'
+		//ErrorFecha.Class = 'datos_cliente_form_input_error--hidden'
+		&BoletoFechaValido = true
+	ENDIF
+
+	IF &Boleto.cv.IsEmpty() 
+		//ErrorCV.Visible = True
+		&Boleto.errorCV = 'El campo de cv no puede estar vacio'
+		//ErrorCV.Caption = 'El campo de cv esta vacio'
+		//ErrorCV.Class = 'datos_cliente_form_input_error'
+		&BoletoCVValido = false
+	ELSE
+		&Boleto.errorCV = '/'
+		//ErrorCV.Caption = '/'
+		//ErrorCV.Class = 'datos_cliente_form_input_error--hidden'
+		&BoletoCVValido = true
+	ENDIF
+
+	IF &BoletoFolioValido AND &BoletoFechaValido AND &BoletoCVValido
+		&Boleto.message = 'correcto'
+		&Boleto.valido = true
+	ELSE
+		&Boleto.message = 'icorrecto'
+	ENDIF
+
+Endevent
+
+
+Event ErrorModal1.HiddeErrorModal
+	ErrorModal1.CloseModalError()
+Endevent
+
+Event agregarBoleto.Click
+	IF &index < 21
+		&Boleto = new()
+		&Boleto.index = &index
+		&Boleto.fecha = &Today
+		&BoletosCollection.Add(&Boleto)
+		&index += 1
+	ELSE
+		agregarBoletoIcon.Class = 'fa-regular fa-circle-xmark h1 w-100 d-flex justify-content-center'
+		agregarBoleto.Class = 'btn-outline-blue--block'
+		agregarBoletoLabel.Class = 'subheader_text'
+		agregarBoletoLabel.Caption = 'No. maximo de boletos: 20'
+	ENDIF
+Endevent
+
+
+Event BoletosGrid.Load
+	ErrorModal1.PrintValues('load model')
+	
+	IF &Boleto.valido 
+		&BoletosCollection.CurrentItem.errorFolio = '/'
+		&BoletosCollection.CurrentItem.errorFecha = '/'
+		&BoletosCollection.CurrentItem.errorCV = '/'
+	ENDIF
+
+	ErrorFolio.Caption = &BoletosCollection.CurrentItem.errorFolio
+	ErrorFolio.Class = 'datos_cliente_form_input_error'
+	
+	ErrorFecha.Caption = &BoletosCollection.CurrentItem.errorFecha
+	ErrorFecha.Class = 'datos_cliente_form_input_error'
+	
+	ErrorCV.Caption= &BoletosCollection.CurrentItem.errorCV
+	ErrorCV.Class = 'datos_cliente_form_input_error'
+
+	
+	ConfirmacionBoletoLabel.Caption = &BoletosCollection.CurrentItem.message
+	ConfirmacionBoletoLabel.Class = &BoletosCollection.CurrentItem.messageClass
+	ConfirmacionBoletoIcon.Class = &BoletosCollection.CurrentItem.icon
+	BoletoIndex.Caption = &BoletosCollection.CurrentItem.index.ToString()
+Endevent

@@ -1,0 +1,56 @@
+.boleto-container {
+  background-color: var(--lightblue);
+}
+
+.boleto-wrapper {
+  padding: 3rem;
+}
+
+.boleto_image img {
+  width: 100%;
+}
+
+.boleto_points {
+  height: fit-height;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
+.boleto_points_center {
+  height: fit-content;
+}
+
+.boleto_point {
+  display: flex;
+}
+
+.boleto_list {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.boleto_indicator {
+  width: 30px;
+  height: 30px;
+  background-color: var(--red);
+  font-weight: bold;
+  font-size: var(--generalSize);
+  color: var(--white);
+  text-align: center;
+
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .boleto_points {
+    margin-top: 2rem;
+  }
+}

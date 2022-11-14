@@ -1,0 +1,58 @@
+/* Container */
+.intro_container {
+  height: fit-content;
+  padding: 6rem 0;
+}
+.intro_wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Data points */
+.intro_requerimientos_list {
+  list-style: none;
+}
+
+.intro_requerimientos_list li:before {
+  content: '\2022';
+  color: var(--darkblue);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Center info */
+.intro_info {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Data points */
+.intro_data_points {
+}
+
+/* image */
+.intro_data_image {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro_data_image img {
+  width: 100%;
+}
+
+/* Advice */
+.intro_data_advice {
+  /* margin-top: 2rem; */
+  text-align: center;
+}
+
+.intro_data_advice p {
+  padding: 1rem 2rem;
+}

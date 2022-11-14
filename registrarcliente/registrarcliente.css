@@ -1,0 +1,37 @@
+.registrar_cliente_container{
+    padding-top: calc(70px + 96px);
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.registrar_cliente_wrapper{
+    padding-left: 0;
+    padding-right: 0; 
+}
+
+.registrar_cliente_form_item_label {
+    margin: 0;
+}
+
+.registrar_cliente_form_item_input_error {
+    margin: 0;
+    /* opacity: 0;      */
+    color: var(--red);
+    font-family: var(--body);
+    font-size: 16px;
+    transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+}
+
+.registrar_cliente_form_item_input_error--show{
+    opacity: 1;
+}
+
+@media (max-width: 920px){
+    .registrar_cliente_container{
+        height: auto;
+    }
+}

@@ -1,0 +1,38 @@
+.footer_container {
+  background-color: var(--darkblue);
+  padding: 3em 0;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer_menu {
+  display: flex;
+}
+
+.footer_item {
+}
+
+.footer_copyright {
+  width: 100%;
+  text-align: center;
+
+  color: var(--white);
+  font-size: var(--generalSize);
+  font-family: var(--body);
+  font-weight: 700;
+}
+
+@media (max-width: 762px) {
+  .footer_menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer_item {
+    width: 100%;
+    text-align: center;
+  }
+}

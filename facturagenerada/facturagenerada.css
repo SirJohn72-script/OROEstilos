@@ -1,0 +1,41 @@
+.factura_generada_container {
+  margin-top: 3rem;
+  min-height: 100vh;
+}
+
+.factura_generada_icon,
+.factura_generada_title,
+.factura_generada_description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.factura_generada_icon_font {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lightgrey);
+  color: var(--green);
+  font-size: 48px;
+  font-weight: 700;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.factura_generada_title {
+  margin-top: 1rem;
+}
+
+.factura_generada_actions {
+  display: flex;
+  justify-content: center;
+}
+.factura_generada_actions input[type="button"] {
+  margin: 0.5rem;
+}
