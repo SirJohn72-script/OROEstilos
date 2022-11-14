@@ -91,6 +91,16 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+.row .col-xs-12{
+  --bs-gutter-x: 0;
+}
+
+.col-xs-12
+{
+  margin: 0 !important;
+  padding: 0 !important;
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -128,6 +138,4 @@ table {
   border-spacing: 0;
 }
 
-.row{
-  --bs-gutter-x: 0 !important;
-}
+
