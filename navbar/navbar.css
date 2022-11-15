@@ -1,5 +1,5 @@
 .navbar_container {
-   width: 100%;
+  width: 100%;
   height: 70px;
   box-sizing: border-box;
 
@@ -116,6 +116,11 @@
     left: 0;
     z-index: 99999;
     background-color: var(--lightblue);
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .navbar_wrapper{
   }
 
   /* Menu */
@@ -187,8 +192,11 @@
 
 /* Mobile Size */
 @media (max-width: 600px) {
-  .navbar_logo .navbar_brand {
-    font-size: 14px;
+  .navbar_wrapper{
+  }
+
+  .navbar_logo img {
+    height: 30px;
   }
 
   .navbar_menu {
@@ -215,3 +223,6 @@
     margin: 0.25rem 0;
   }
 }
+
+
+

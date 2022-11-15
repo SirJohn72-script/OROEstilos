@@ -92,15 +92,14 @@ video {
   vertical-align: baseline;
 }
 
-.row .col-xs-12{
-  --bs-gutter-x: 0;
+*, 
+*:after, 
+*::before{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
 }
 
-.col-xs-12
-{
-  margin: 0 !important;
-  padding: 0 !important;
-}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -138,4 +137,15 @@ table {
   border-spacing: 0;
 }
 
+body::-webkit-scrollbar{
+  height: 0; 
+  display: none;
+}
 
+html{
+  overflow-x: hidden; 
+}
+
+#MAINTABLE_MPAGE{
+  overflow-x: hidden;
+}
